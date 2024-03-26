@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Top bar with profile picture, username, and options -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Profile picture -->
+        <ImageView
+            android:id="@+id/profilePic"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/profile_picture"
+            android:scaleType="centerCrop"
+            android:layout_marginEnd="16dp"/>
+
+        <!-- Username and options -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="username"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/postTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 hours ago"
+                android:textSize="12sp"
+                android:textColor="#888"/>
+
+        </LinearLayout>
+
+        <!-- More options button -->
+        <ImageView
+            android:id="@+id/optionsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_more"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"/>
+    </LinearLayout>
+
+    <!-- Image or video content -->
+    <ImageView
+        android:id="@+id/postMedia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topBar"
+        android:layout_marginTop="8dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_channel_background"
+        android:visibility="visible" />
+
+    <!-- Like and comment buttons -->
+    <LinearLayout
+        android:id="@+id/likeCommentBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/postMedia"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <!-- Like button -->
+        <ImageView
+            android:id="@+id/likeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/ic_like"
+            android:visibility="visible" />
+
+        <!-- Comment button -->
+        <ImageView
+            android:id="@+id/commentButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_comment" />
+    </LinearLayout>
+
+    <!-- Likes count -->
+    <TextView
+        android:id="@+id/likesCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100 likes"
+        android:textSize="14sp"
+        android:textColor="#000"
+        android:layout_below="@id/likeCommentBar"
+        android:layout_marginStart="8dp"
+        android:padding="8dp"/>
+
+    <!-- Caption -->
+    <TextView
+        android:id="@+id/caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Caption text goes here"
+        android:textSize="14sp"
+        android:layout_below="@id/likesCount"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Comments -->
+    <TextView
+        android:id="@+id/comments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View all 20 comments"
+        android:textSize="14sp"
+        android:textColor="#888"
+        android:layout_below="@id/caption"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"/>
+</RelativeLayout>
